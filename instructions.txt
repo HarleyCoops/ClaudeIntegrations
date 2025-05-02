@@ -1,0 +1,135 @@
+1. We are building a tool called claudeintegrations that will be a showcase for all integrations can do. 
+
+2. We are going to build integration pipelines for all 10 announced services that will be a central repository to clone pre-built (we will build them) integrations to each service. 
+
+3. Services to build: Atlassian’s Jira and Confluence, Zapier, Cloudflare, Intercom, Asana, Square, Sentry, PayPal, Linear, and Plaid
+
+Okay, here is a verbose plan instructing another large language model on how to research and connect to the various services mentioned in the provided YouTube video transcript, focusing on utilizing Claude's new MCP integration capabilities.
+
+**Instructions for LLM: Comprehensive Plan for Integrating Services with Claude via MCP**
+
+**Objective:** Your primary goal is to understand and implement the process of connecting Claude to various external applications and data sources using its new integration features, specifically focusing on the MCP (Machine Communication Protocol) standard and the Zapier MCP integration, as demonstrated in the provided source transcript. This plan will guide you through researching the capabilities and executing the connection steps for each noted service.
+
+**Prerequisites:**
+
+*   You must operate within a simulated environment or have access to a testing environment that replicates Claude's functionality, specifically **the Claude Max plan**. This plan unlocks the necessary integration options, including **Claude research** and the ability to **add new integrations**.
+*   You will need access to accounts for the services you intend to connect (e.g., Zapier, PayPal, Google Calendar, Gmail, WordPress, Facebook, Google Docs, Discord, OpenAI/ChatGPT).
+*   An understanding of navigation within Claude's web interface (or simulated equivalent) including accessing **Settings**, **Profile**, **Integrations**, and the chat interface **plus** button and **settings cog**.
+*   Familiarity with logging into external services like Zapier.
+
+**Core Claude Integration Concepts to Research:**
+
+1.  **Web Search:** Research Claude's built-in web search capability. Understand how to activate and utilize it during conversations to access current information. Note that this feature seems to be available worldwide.
+2.  **Research Mode (Beta):** Investigate the **Research** feature. Research how this beta feature allows Claude to **deeply investigate queries by searching through hundreds of internal and external sources**. Understand that during this process, Claude can **invoke tools from integrations automatically without further approval**. Research how to toggle this feature on.
+3.  **Pre-built Integrations:** Research the existence and purpose of Anthropic's **open standard created by Anthropic for AI applications to connect to tools and data**, known as **MCP**. Identify the services Claude has pre-built integrations for, such as **Google Drive, Google calendar, Gmail, GitHub, Atlassian, Zapia, Cloudflare, Sentry, PayPal, Asana, Linear**. Understand that these are **existing integrations** that can be chosen directly.
+4.  **Custom Integrations using Remote MCP:** Research the concept of **custom integrations using remote MCP**. Understand that this feature allows you to **connect Claude to services that have not been verified by Anthropic** and **allow Claude to access and take action inside these services**. Recognize that setting up your own MCP servers has **less security** compared to verified integrations. Research that this is the method for connecting services *via* a third-party MCP server like Zapier.
+
+**General Steps for Connecting Services via Zapier MCP:**
+
+This is a key method demonstrated for connecting a multitude of services. You will act as the intermediary between Claude and other apps through the Zapier MCP server.
+
+1.  **Log in to Zapier and Head to the Zapier MCP Dashboard:** Initiate the process by accessing the Zapier platform.
+2.  **Select New MCP Server:** Navigate the Zapier interface to find the option to create a new MCP server.
+3.  **Add a Client and Create an MCP Server:** Create a new server instance. When prompted to choose a client, select **Claude**. Provide a name for your MCP server (e.g., "Claude MCP Server").
+4.  **Add Tools Inside the Zapier MCP Server:** Once the server is created, access its configuration to **add tools**. This is where you will select the specific external services (like Google Calendar, Gmail, WordPress, PayPal, etc.) that you want Claude to interact with *through Zapier*. For each tool added, you may need to connect the corresponding account for that service (e.g., Google account for Calendar/Gmail/Docs, PayPal account, WordPress account).
+5.  **Connect Your MCP Client (Claude) to Zapier:** Obtain the unique **Integration URL** for your Zapier MCP server.
+6.  **Add the Zapier MCP Integration in Claude:** Go to **Claude Settings** -> **Profile** -> **Integrations**. Select the option to **Add More Integration URL**. Type in a name (e.g., "Zapia") and paste the **Integration URL** obtained from Zapier. Hit **add**.
+7.  **Connect the Zapier Integration within Claude:** After adding the URL, you will likely see the Zapier integration listed. Click **connect**. Authorize Claude to access your Zapier account.
+8.  **Verify Connected Tools in Claude:** Once the Zapier MCP is connected, go to a **new chat** in Claude. Click the **settings cog**. You should now see Zapier listed as an enabled integration with **all of these tools right here** that you added in Zapier.
+9.  **IMPORTANT: Reconnect MCP After Adding New Tools:** **If you add any new tools inside your Zapier MCP server, you must disconnect the Zapier MCP integration in Claude (Settings -> Profile -> Integrations -> Remove/Edit -> Remove)** **and then reconnect it**. This ensures Claude recognizes the newly added tools. The source notes that this **is annoying** but necessary as it **doesn't select the right event** or update automatically otherwise.
+
+**Detailed Plan for Researching and Connecting Specific Services:**
+
+For each service or group listed below, perform the following sub-tasks:
+
+*   **Research Task:** Understand the service's primary function and how its capabilities could be beneficial when integrated with an AI like Claude. Research how the integration method (pre-built or via Zapier MCP) facilitates specific actions or data access from within Claude.
+*   **Connection Steps:** Follow the general steps outlined above or the specific steps provided in the source for the integration type.
+*   **Demonstrated Use Cases:** Note the specific actions or workflows demonstrated in the source using this integration.
+
+---
+
+**1. Pre-built Integrations:**
+
+*   **Services:** Google Drive, Google Calendar, Gmail, GitHub, Atlassian, Zapier, Cloudflare, Sentry, PayPal, Asana, Linear.
+*   **Research Task:** For each service, understand its core purpose. Research how Claude's direct integration allows interaction with these services (e.g., accessing files, managing calendar events, interacting with emails, project management tasks, etc.). Note that **Zapia** is listed as a pre-built integration itself, separate from connecting *via* a Zapier MCP, which is confusing but note it.
+*   **Connection Steps:** Access Claude's settings: **Settings** -> **Profile**. Scroll down to find the list of integrations. If a service is listed here directly (not via the "Add More Integration URL"), it indicates a pre-built option. Follow the prompts within Claude to connect your account for each desired service.
+*   **Demonstrated Use Cases:** The source mentions **inside Claude you can now connect like Google Drive or your emails and that sort of thing**. Specific examples of *using* these pre-built integrations in the chat are not clearly distinguished from the Zapier MCP examples in the source, except for the *ability* to add them here. PayPal is listed as pre-built but also demonstrated via Zapier MCP for invoices.
+*   **Notes/Issues:** The **optionality to add more is really the new update**, suggesting the pre-built list is limited compared to what's possible via MCP.
+
+---
+
+**2. Zapier MCP (as the Connection Hub):**
+
+*   **Service:** Zapier.
+*   **Research Task:** Understand Zapier's role as an automation platform that connects **over 5,000 other apps**. Research how the Zapier MCP allows this vast network of apps to become tools accessible by Claude. Understand that connecting to Zapier via MCP allows you to **have multiple apps inside that MCP server all connected to your account**.
+*   **Connection Steps:** Follow the detailed **General Steps for Connecting Services via Zapier MCP** outlined above. Pay close attention to creating the server, adding individual tools *within* Zapier, getting the MCP URL, and connecting that URL in Claude.
+*   **Demonstrated Use Cases:** This is the fundamental connection method for many services demonstrated later. It enables Claude to use the tools added *within* Zapier.
+*   **Notes/Issues:** Remember to **disconnect and reconnect** the Zapier MCP integration in Claude after adding new tools in Zapier for the changes to sync. The source notes connecting to Zapier MCP was **very simple** and **one-click**.
+
+---
+
+**3. Specific Services Connected via Zapier MCP (Demonstrated or Attempted):**
+
+*   **Service:** PayPal.
+    *   **Research Task:** Research PayPal's invoicing and transaction capabilities. Understand how connecting via Zapier MCP allows Claude to automate these specific financial tasks.
+    *   **Connection Steps:** Add PayPal as a tool inside your Zapier MCP server. Use the specific address provided in the source: **mcp.appal.com/paypal.com/ssse** (ensure `https://` is included). In Claude, ensure the Zapier MCP is connected (or reconnect if PayPal was added after initial connection). Connect the PayPal tool within Claude's settings cog for the chat. You may need to log into your PayPal account.
+    *   **Demonstrated Use Cases:** Successfully demonstrated **creating PayPal invoice links** and **fetching details of your PayPal transactions**. Specifically, creating an invoice for a specified amount and recipient.
+    *   **Notes/Issues:** Connection was described as **successfully connected how easy was that**. Successfully **replaced our finance team** for creating invoices.
+
+*   **Service:** Google Calendar.
+    *   **Research Task:** Research Google Calendar's event management functions. Understand how connecting via Zapier MCP allows Claude to check calendars and create/manage events.
+    *   **Connection Steps:** Add Google Calendar as a tool inside your Zapier MCP server. Connect your Google account. Choose actions like **create a new calendar** or **create a detailed event**. Configure settings like whether AI selects start/end dates. Ensure the Zapier MCP is connected in Claude (reconnect if needed). The tools should appear in Claude's settings cog.
+    *   **Demonstrated Use Cases:** Successfully demonstrated **creating a calendar event** for a specified time, date, and attendees **all inside the chat of Claude**. Also attempted to **add my upcoming trip details to my calendar**, which successfully created an event. Attempted to **check my calendar summarize upcoming meetings**, which failed initially because Claude used the wrong MCP tool (create event instead of find event), but succeeded after reconnecting the MCP.
+    *   **Notes/Issues:** The initial attempt to find calendar events using Zapier tools failed until the Zapier MCP connection was reset in Claude. Despite this, creating events and successfully finding events after reset worked **perfectly**. Some errors were noted later when trying to access calendar details after creating a trip event.
+
+*   **Service:** Gmail.
+    *   **Research Task:** Research Gmail's email sending and finding capabilities. Understand how connecting via Zapier MCP allows Claude to send emails based on workflow outputs.
+    *   **Connection Steps:** Add Gmail as a tool inside your Zapier MCP server. Connect your Google account. Select actions like **send email** or **find email**. Ensure the Zapier MCP is connected in Claude (reconnect if needed). The tools should appear in Claude's settings cog.
+    *   **Demonstrated Use Cases:** Successfully demonstrated **sending me a personalized brie to start my day** which involved composing and sending an email using the Gmail send email feature. The email was **successfully delivered to inbox**. Also attempted to use the "find email" tool.
+    *   **Notes/Issues:** The initial attempt to find emails or check the calendar for the briefing failed because Claude didn't select the right MCP tool until the Zapier MCP connection was reset. After reconnecting, Claude successfully used the correct tools.
+
+*   **Service:** WordPress.
+    *   **Research Task:** Research WordPress's content management system capabilities, specifically post creation and user management. Understand how connecting via Zapier MCP could potentially allow Claude to draft and publish articles directly.
+    *   **Connection Steps:** Add WordPress as a tool inside your Zapier MCP server. Connect your WordPress account. **Requires installing the Zapier WordPress plugin** on your WordPress site. Select actions like **create post**, **update a post**, or **find a post**. Configure post type (e.g., 'post'). Ensure the Zapier MCP is connected in Claude (reconnect if needed).
+    *   **Demonstrated Use Cases:** Attempted to **post this to WordPress** as part of a content creation workflow. Also attempted to **create a short SEO blog post to WordPress or publish to WordPress** and **create a new user**.
+    *   **Notes/Issues:** The source **struggling with Facebook** and WordPress. Notes that Claude **hasn't worked well** and **is totally failing on WordPress**. It fails to create users and send posts directly, providing the content to copy/paste instead. This indicates the WordPress integration via Zapier MCP was not fully functional or set up correctly in the demonstration.
+
+*   **Service:** Facebook Pages.
+    *   **Research Task:** Research Facebook Pages and the ability to create posts. Understand how connecting via Zapier MCP could allow Claude to publish social media content.
+    *   **Connection Steps:** Add Facebook Pages as a tool inside your Zapier MCP server. Connect your Facebook account. Select actions like **create a new page stream post on a page**. Ensure the Zapier MCP is connected in Claude (reconnect if needed).
+    *   **Demonstrated Use Cases:** Attempted to **post a short Alex Hamozi style social media p post to Facebook** as part of a content creation workflow.
+    *   **Notes/Issues:** Similar to WordPress, the source notes Claude was **struggling with Facebook**. The direct posting failed, and Claude provided the content to copy/paste.
+
+*   **Service:** Google Docs.
+    *   **Research Task:** Research Google Docs' document creation capabilities. Understand how connecting via Zapier MCP allows Claude to generate documents and packing lists.
+    *   **Connection Steps:** Add Google Docs as a tool inside your Zapier MCP server. Connect your Google account. Select actions like **create document from text from template**. Ensure the Zapier MCP is connected in Claude (reconnect if needed).
+    *   **Demonstrated Use Cases:** Successfully demonstrated creating a packing list document as part of the "add my upcoming trip details" request. Successfully demonstrated creating a **beautifully designed** document on AI agents **directly inside Google Docs from the chat**. Claude was also able to **send me a link to the Google doc**.
+    *   **Notes/Issues:** This integration **works perfectly** for creating documents and providing links. Described as **really cool stuff you can do with this undeniably**.
+
+*   **Service:** Discord.
+    *   **Research Task:** Research Discord's capabilities, specifically creating posts or messages. Understand how connecting via Zapier MCP could allow Claude to interact with Discord servers.
+    *   **Connection Steps:** Add Discord as a tool inside your Zapier MCP server. Connect your Discord account. Select actions like **create a new post**. Ensure the Zapier MCP is connected in Claude (reconnect if needed).
+    *   **Demonstrated Use Cases:** The source shows adding Discord as a tool in Zapier and selecting "create a new post", but **the setup there** is where the demonstration stops. No actual usage in a Claude chat is shown.
+    *   **Notes/Issues:** Connection setup started in Zapier, but not fully demonstrated or confirmed working in Claude.
+
+*   **Service:** OpenAI / ChatGPT / DALL-E (for Image Generation).
+    *   **Research Task:** Research DALL-E's image generation capabilities via API. Understand how Zapier can act as a bridge to connect Claude to DALL-E (potentially via a ChatGPT tool in Zapier) to enable image creation from within Claude chat.
+    *   **Connection Steps:** Add a tool like **Chat GP2** inside your Zapier MCP server. Select actions like **generate an image**. This likely connects to DALL-E via the OpenAI/ChatGPT API through Zapier. Ensure the Zapier MCP is connected in Claude (reconnect if needed). When using the tool, you will **generate use D3 to generate an image inside the claw chat** and Claude will **ask you for the details about the image**.
+    *   **Demonstrated Use Cases:** Successfully demonstrated **generating images directly inside Claude**. After the prompt and confirmation, Claude provides a **URL** to the generated image. Demonstrated by creating an image of a cat.
+    *   **Notes/Issues:** This feature is notable because **you can't create images inside Claude previously**. This integration is described as **insane** and **absolutely wild**. Note that it is likely using DALL-E via Zapier's connection to OpenAI/ChatGPT.
+
+---
+
+**4. Services Mentioned as Connectable via Zapier (Not Demonstrated):**
+
+*   **Services:** Open Router, Google Forms, X (Twitter), LinkedIn.
+*   **Research Task:** Research the potential actions and integrations available for these services within the Zapier platform that could be exposed to Claude via an MCP. Understand their relevance to potential AI workflows (e.g., interacting with other AI models, collecting data via forms, posting on other social media platforms).
+*   **Connection Steps:** While not demonstrated in the source, based on the pattern of other Zapier integrations, the steps would involve: Adding the service as a tool within the Zapier MCP server -> Connecting the account -> Selecting desired actions. Then, ensuring the Zapier MCP is connected (and reconnected if necessary) in Claude.
+*   **Demonstrated Use Cases:** None were demonstrated in the source for these specific services.
+*   **Notes/Issues:** The source notes the *possibility* of connecting to these services through Zapier, highlighting the extensive library of Zapier integrations available.
+
+---
+
+**Conclusion:**
+
+By following this plan, you will research and understand Claude's enhanced capabilities through its native and custom MCP integrations. You will specifically learn to leverage Zapier as a powerful hub to connect a vast array of external services to Claude, enabling it to perform actions like creating invoices, scheduling events, sending emails, generating documents, and even creating images directly from the chat interface. Pay close attention to the requirement of the **Claude Max plan** and the critical step of **disconnecting and reconnecting the Zapier MCP integration in Claude** whenever new tools are added in Zapier. While some integrations like WordPress and Facebook showed issues in the demonstration, the overall potential is significant, allowing Claude to function as a **personal super agent** or **AGI personal assistant**. Remember to review each action carefully when prompted by Claude before allowing external integrations to execute. The only **limitation is your imagination** in combining these tools for complex workflows.
